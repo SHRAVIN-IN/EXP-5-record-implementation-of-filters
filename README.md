@@ -1,3 +1,4 @@
+
 # Image Smoothing and Sharpening Using OpenCV
 
 ## Aim
@@ -147,6 +148,12 @@ plt.show()
 ```
 
 ##  Output
+<img width="515" height="370" alt="dipexx5" src="https://github.com/user-attachments/assets/c83cd2ab-f175-49b1-a1bd-d2163024a0d0" />
+<img width="515" height="370" alt="dipexx4" src="https://github.com/user-attachments/assets/02fab5d0-72ad-4c6a-b582-144e1e4fd4fc" />
+<img width="515" height="370" alt="dipexx3" src="https://github.com/user-attachments/assets/e72f1240-7059-42f8-aec3-1e9485ff5715" />
+<img width="717" height="251" alt="dipexx" src="https://github.com/user-attachments/assets/ed398271-c923-42ec-80a6-94ae52828274" />
+<img width="515" height="370" alt="dipexx1" src="https://github.com/user-attachments/assets/279ad5fb-e71a-46df-a1e0-af236f5d82f7" />
+<img width="515" height="370" alt="dipexx2" src="https://github.com/user-attachments/assets/150c42e0-e874-4a58-a3bc-63e95cccf71f" />
 
 ### Smoothing Filters
 
