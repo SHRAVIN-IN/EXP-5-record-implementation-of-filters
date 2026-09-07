@@ -72,88 +72,121 @@ Display all filtered images using a grid layout for comparison.
 ---
 ## program
 
-```import cv2
+```
+import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Load Image
-image1 = cv2.imread("saveetha.jpg")
+# Step 1: Load the image
+image1 = cv2.imread("shravin.jpeg")
+
+# Step 2: Convert BGR to RGB
 image2 = cv2.cvtColor(image1, cv2.COLOR_BGR2RGB)
 
-# 1. Averaging Filter
+# Step 3: Average Filter
 kernel = np.ones((11,11), np.float32) / 169
-average = cv2.filter2D(image2, -1, kernel)
+image3 = cv2.filter2D(image2, -1, kernel)
 
-# 2. Weighted Averaging Filter
-kernel1 = np.array([[1,2,1],
-                    [2,4,2],
-                    [1,2,1]]) / 16
-weighted = cv2.filter2D(image2, -1, kernel1)
-
-# 3. Gaussian Filter
-gaussian = cv2.GaussianBlur(image2, (33,33), 0)
-
-# 4. Median Filter
-median = cv2.medianBlur(image2, 13)
-
-# 5. Laplacian Linear Kernel
-kernel2 = np.array([[-1,-1,-1],
-                    [2,-2,1],
-                    [2,1,-1]])
-laplacian_kernel = cv2.filter2D(image2, -1, kernel2)
-
-# 6. Laplacian Operator
-laplacian = cv2.Laplacian(image2, cv2.CV_64F)
-
-# Display All Results
-plt.figure(figsize=(12,10))
-
-plt.subplot(2,4,1)
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
 plt.imshow(image2)
 plt.title("Original Image")
 plt.axis("off")
 
-plt.subplot(2,4,2)
-plt.imshow(average)
-plt.title("Average Filter")
+plt.subplot(1,2,2)
+plt.imshow(image3)
+plt.title("Average Filter Image")
+plt.axis("off")
+plt.show()
+
+# Step 4: Weighted Average Filter
+kernel1 = np.array([[1,2,1],
+                    [2,4,2],
+                    [1,2,1]]) / 16
+
+image2 = cv2.cvtColor(image1, cv2.COLOR_BGR2RGB)
+image3 = cv2.filter2D(image2, -1, kernel1)
+
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
 plt.axis("off")
 
-plt.subplot(2,4,3)
-plt.imshow(weighted)
-plt.title("Weighted Average")
+plt.subplot(1,2,2)
+plt.imshow(image3)
+plt.title("Weighted Average Filter Image")
+plt.axis("off")
+plt.show()
+
+# Step 5: Gaussian Blur
+gaussian_blur = cv2.GaussianBlur(image2, (33,33), 0, 0)
+
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
 plt.axis("off")
 
-plt.subplot(2,4,4)
-plt.imshow(gaussian)
+plt.subplot(1,2,2)
+plt.imshow(gaussian_blur)
 plt.title("Gaussian Blur")
 plt.axis("off")
+plt.show()
 
-plt.subplot(2,4,5)
+# Step 6: Median Blur
+median = cv2.medianBlur(image2, 13)
+
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+
+plt.subplot(1,2,2)
 plt.imshow(median)
 plt.title("Median Blur")
 plt.axis("off")
+plt.show()
 
-plt.subplot(2,4,6)
-plt.imshow(laplacian_kernel)
-plt.title("Laplacian Kernel")
+# Step 7: Laplacian Kernel
+kernel2 = np.array([[-1,-1,-1],
+                    [2,-2,1],
+                    [2,1,-1]])
+
+image3 = cv2.filter2D(image2, -1, kernel2)
+
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
 plt.axis("off")
 
-plt.subplot(2,4,7)
+plt.subplot(1,2,2)
+plt.imshow(image3)
+plt.title("Laplacian Kernel")
+plt.axis("off")
+plt.show()
+
+# Step 8: Laplacian Operator
+laplacian = cv2.Laplacian(image2, cv2.CV_64F)
+
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+
+plt.subplot(1,2,2)
 plt.imshow(laplacian)
 plt.title("Laplacian Operator")
 plt.axis("off")
-
-plt.tight_layout()
 plt.show()
 ```
 
 ##  Output
-<img width="515" height="370" alt="dipexx5" src="https://github.com/user-attachments/assets/c83cd2ab-f175-49b1-a1bd-d2163024a0d0" />
-<img width="515" height="370" alt="dipexx4" src="https://github.com/user-attachments/assets/02fab5d0-72ad-4c6a-b582-144e1e4fd4fc" />
-<img width="515" height="370" alt="dipexx3" src="https://github.com/user-attachments/assets/e72f1240-7059-42f8-aec3-1e9485ff5715" />
-<img width="717" height="251" alt="dipexx" src="https://github.com/user-attachments/assets/ed398271-c923-42ec-80a6-94ae52828274" />
-<img width="515" height="370" alt="dipexx1" src="https://github.com/user-attachments/assets/279ad5fb-e71a-46df-a1e0-af236f5d82f7" />
-<img width="515" height="370" alt="dipexx2" src="https://github.com/user-attachments/assets/150c42e0-e874-4a58-a3bc-63e95cccf71f" />
+<img width="516" height="266" alt="download" src="https://github.com/user-attachments/assets/a5b41c2e-9791-4ab5-a2c2-c1d29621995b" />
+<img width="717" height="358" alt="download" src="https://github.com/user-attachments/assets/fc49fbb9-eb09-4fa2-9465-d4b9ecc954e9" />
+<img width="516" height="266" alt="download" src="https://github.com/user-attachments/assets/a24f7a50-e78f-4b0c-95f9-5222cb3598a0" />
+<img width="717" height="358" alt="download" src="https://github.com/user-attachments/assets/5a758a1d-1da2-468b-b159-18af28ad2379" />
+<img width="533" height="266" alt="download" src="https://github.com/user-attachments/assets/1e0082d6-b382-4889-92c5-2912322ae818" />
+<img width="516" height="266" alt="download" src="https://github.com/user-attachments/assets/7b5a6137-0016-478b-9a64-bb044894f07a" />
 
 ### Smoothing Filters
 
